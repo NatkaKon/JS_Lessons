@@ -24,29 +24,30 @@ console.log('lesson 2');
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
-// function sum(n){
-//     return function (num){
-//         console.log(n+num)
-//     }
-// }
-// sum(3)(6)
+function sum(n: number) {
+    return function (num: number) {
+        console.log(n + num)
+    }
+}
+
+sum(3)(6)
 
 // Task 02
 // Реализовать функцию makeCounter которая работает следующим образом:
-// function makeCounter(){
-//     let num = 1;
-//     return function (){
-//
-//         console.log(num++)
-//     }
-// }
-// const counter = makeCounter();
-// counter(); // 1
-// counter(); // 2
-// const counter2 = makeCounter();
-// counter2(); // 1
-// counter(); // 3
+function makeCounter() {
+    let num = 1;
+    return function () {
 
+        console.log(num++)
+    }
+}
+
+const counter = makeCounter();
+counter(); // 1
+counter(); // 2
+const counter2 = makeCounter();
+counter2(); // 1
+counter(); // 3
 
 
 // Task 03
@@ -57,9 +58,39 @@ console.log('lesson 2');
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
+function makeCounterNew(num: number) {
+
+    let currentCount = num;
+    return {
+        increase: function () {
+            return currentCount = currentCount + 1
+        },
+        decrease: function () {
+            return currentCount = currentCount - 1
+        },
+        reset: function () {
+            currentCount = 0
+        },
+        set: function (value:number) {
+            currentCount = value
+        }
+    }
+}
+
+const counterNew = makeCounterNew(5);
+console.log(counterNew.increase())
+console.log(counterNew.decrease())
+counterNew.reset()
+console.log(counterNew.increase())
+counterNew.set(15)
+console.log(counterNew.increase())
+
+
+
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
+
 // 1) superSum(0) //0
 // 2) superSum(3)(2)(5)(3) //10
 // 3) superSum(3)(2)(5,3) //10
@@ -76,5 +107,6 @@ console.log('lesson 2');
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
 // just a plug
-export default () => {};
+export default () => {
+};
 

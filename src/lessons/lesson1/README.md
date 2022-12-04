@@ -8,4 +8,6 @@
 3) Заполнить редюссер в файле currencyReducer;
 4) Все приложение должно работать без вставок // @ts-ignore;
 5) Переписать компоненту CurrencyExchangeContainer c помощью сокращенной записи mapDispatchToProps;
+  https://qna.habr.com/q/535268
+   https://egghead.io/lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation
 6) Переписать компоненту CurrencyExchangeContainer с помощью useDispatch и useSelector.
